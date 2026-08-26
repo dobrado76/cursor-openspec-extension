@@ -1,0 +1,81 @@
+{
+  "name": "openspec-sidebar",
+  "publisher": "local",
+  "displayName": "OpenSpec Sidebar",
+  "description": "OpenSpec Sidebar extension for Cursor AI",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "OpenSpec",
+      "properties": {
+        "openspec.nodePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to node.exe (auto-detected if empty)"
+        },
+        "openspec.cliPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to openspec.js CLI (auto-detected if empty)"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "openspec.showSidebar",
+        "title": "OpenSpec: Show Sidebar",
+        "category": "OpenSpec"
+      },
+      {
+        "command": "openspec.resetSidebar",
+        "title": "OpenSpec: Reset Sidebar (fix hidden icon)",
+        "category": "OpenSpec"
+      },
+      {
+        "command": "openspec.moveToSidebar",
+        "title": "OpenSpec: Move to Left Sidebar",
+        "category": "OpenSpec"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "openspec-sidebar-container",
+          "title": "OpenSpec Toolkit",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "openspec-sidebar-container": [
+        {
+          "type": "webview",
+          "id": "openspec.sidebarView",
+          "name": "OpenSpec Toolkit"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "npx @vscode/vsce package --allow-missing-repository --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript": "^6.0.3"
+  }
+}
