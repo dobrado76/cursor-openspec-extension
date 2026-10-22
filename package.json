@@ -70,7 +70,9 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "vscode:prepublish": "npm run compile",
-    "package": "npx @vscode/vsce package --allow-missing-repository --no-dependencies"
+    "package": "npx @vscode/vsce package --allow-missing-repository --no-dependencies",
+    "docs:build": "node scripts/build-ai-support.mjs",
+    "docs:check": "node scripts/check-ai-support.mjs"
   },
   "devDependencies": {
     "@types/vscode": "^1.105.0",

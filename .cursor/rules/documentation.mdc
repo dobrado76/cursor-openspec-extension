@@ -1,0 +1,20 @@
+---
+description: Keep OpenSpec Sidebar support docs in sync with behavior changes
+alwaysApply: true
+---
+
+# Documentation maintenance
+
+When a change affects user-visible behavior, update the matching `docs/` source in the same change. Then run `npm run docs:build` and commit `AI-SUPPORT.md`. Do not edit `AI-SUPPORT.md` by hand.
+
+- New or renamed control, toast, or command → `docs/user-guide.md`, `docs/reference.md`, and `docs/FAQ.md`
+- New or changed setting → `docs/configuration.md` and `docs/reference.md`
+- New error or a changed CLI failure path → `docs/troubleshooting.md` and `docs/symptom-index.md`
+- Changed persistence, selection, or refresh rules → `docs/architecture.md` and `docs/reference.md`
+- Install, package, or debug steps → `docs/getting-started.md` and `docs/development.md`
+- Removed behavior → delete it from the docs and from the FAQ. Do not leave it as if it still exists.
+- A limitation or non-goal → `docs/roadmap.md` and `docs/product.md`
+
+`npm run docs:check` must pass. It compares `AI-SUPPORT.md` to the generator output and does not rebuild the file.
+
+Do not document OpenSpec, Cursor, or VS Code features this extension does not implement. Link to https://openspec.dev/docs instead of copying their manual.

@@ -1,0 +1,9 @@
+# OpenSpec Sidebar
+
+> Cursor/VS Code sidebar that lists OpenSpec changes and copies or runs a small set of OpenSpec actions. This file is only a pointer. It is not the documentation.
+
+Canonical support document: https://github.com/dobrado76/cursor-openspec-extension/blob/main/AI-SUPPORT.md
+
+- Repository: https://github.com/dobrado76/cursor-openspec-extension
+- Issues: https://github.com/dobrado76/cursor-openspec-extension/issues
+- OpenSpec (external): https://github.com/Fission-AI/OpenSpec
